@@ -3,7 +3,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-![Snake Game Demo](./README_ASSETS/snake-game-demo.gif)
+![Snake Game Demo](./README_ASSETS/snake-ui-mobile.mp4)
 
 A classic Snake game built using React.js, HTML Canvas, and TypeScript.
 

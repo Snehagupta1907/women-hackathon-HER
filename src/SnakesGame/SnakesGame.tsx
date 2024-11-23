@@ -85,36 +85,39 @@ const SnakesGame: React.FC = () => {
   return (
     <div id="snakes-game-container">
       {justStarted ? (
-        <>
-          <p className="new-game-hint">Click on "Let's Play" to start</p>
-          <div className="flex w-[30%] mt-10">
-            <div className="w-full bg-transparent border rounded-lg shadow">
-              <img
-                className="rounded-t-lg"
-                src="https://m.media-amazon.com/images/I/81t8t9TyYLL.png"
-                alt="Snake Game Banner"
-              />
-              <div className="p-5">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  Snake Game #Pool 1
-                </h5>
-                <p className="mb-3 font-normal text-green-300">
-                  Welcome to the Snake Game! Aim to beat your highest score by
-                  collecting as many points as possible.
-                </p>
-                <p className="text-purple-500 mb-5 text-3xl font-bold">
-                  High Score: {highScore}
-                </p>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 w-full"
-                >
-                  Let's Play
-                </button>
-              </div>
-            </div>
-          </div>
-        </>
+       <>
+       <p className="new-game-hint text-center text-sm sm:text-base">
+         Click on "Let's Play" to start
+       </p>
+       <div className="flex justify-center w-full mt-5 sm:mt-10 px-3">
+         <div className="w-full sm:w-[50%] md:w-[30%] bg-transparent border rounded-lg shadow">
+           <img
+             className="rounded-t-lg w-full"
+             src="https://m.media-amazon.com/images/I/81t8t9TyYLL.png"
+             alt="Snake Game Banner"
+           />
+           <div className="p-4 sm:p-5">
+             <h5 className="mb-2 text-lg sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+               Snake Game #Pool 1
+             </h5>
+             <p className="mb-3 font-normal text-green-300 text-sm sm:text-base text-center">
+               Welcome to the Snake Game! Aim to beat your highest score by
+               collecting as many points as possible.
+             </p>
+             <p className="text-purple-500 mb-5 text-xl sm:text-3xl font-bold text-center">
+               High Score: {highScore}
+             </p>
+             <button
+               onClick={() => setIsModalOpen(true)}
+               className="block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 sm:px-5 sm:py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 w-full"
+             >
+               Let's Play
+             </button>
+           </div>
+         </div>
+       </div>
+     </>
+     
       ) : (
         <>
           <p className="text-purple-500 text-3xl font-bold">
