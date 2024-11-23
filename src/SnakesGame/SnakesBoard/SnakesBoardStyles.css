@@ -1,0 +1,37 @@
+/* Root Variables for Dark Theme */
+:root {
+  --primary-color: #00ccff; /* Vibrant Cyan */
+  --secondary-bg: #1a1a1a; /* Dark Gray */
+  --outline-glow: rgba(0, 204, 255, 0.5); /* Glowing outline effect */
+  --shadow-color: rgba(0, 0, 0, 0.8); /* Darker shadow for depth */
+  --text-color: #ffffff; /* White text for contrast */
+}
+
+/* Game Canvas Styles */
+#game-canvas {
+  display: block;
+  outline: 6px solid var(--primary-color);
+  margin: 1rem auto;
+  background-color: var(--secondary-bg);
+  border-radius: 15px; /* Rounded corners for a modern feel */
+  box-shadow: 0 10px 20px var(--shadow-color), 0 0 10px var(--outline-glow); /* Add depth and glow */
+  width: 90%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1; /* Ensures a square canvas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover effect */
+}
+
+/* Hover Effect */
+#game-canvas:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 15px 30px var(--shadow-color), 0 0 20px var(--outline-glow); /* Enhanced glow on hover */
+}
+
+/* Adjustments for Mobile Screens */
+@media (max-width: 600px) {
+  #game-canvas {
+    outline: 4px solid var(--primary-color);
+    max-width: 90%;
+    box-shadow: 0 5px 10px var(--shadow-color), 0 0 10px var(--outline-glow); /* Subtle shadow for smaller screens */
+  }
+}
