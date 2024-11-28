@@ -56,7 +56,7 @@ bot.start((ctx) =>
 
 bot.help(async (ctx) =>
   ctx.reply(`
-🤖 *Roomzy Bot Help* 🏠
+🤖 *Snacky-snake Bot Help* 
 
 /start - Greet the bot
 
