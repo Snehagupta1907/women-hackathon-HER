@@ -3,15 +3,16 @@ import toast from "react-hot-toast";
 
 interface JoinPoolModalProps {
   handleJoinPool: () => Promise<void>;
+  handleStartGame: () => Promise<void>;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const JoinPoolModal: React.FC<JoinPoolModalProps> = ({
   handleJoinPool,
+  handleStartGame,
   setIsModalOpen,
 }) => {
   const [depositAmount, setDepositAmount] = useState<string>("");
-
   const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDepositAmount(e.target.value);
   };
@@ -20,6 +21,7 @@ const JoinPoolModal: React.FC<JoinPoolModalProps> = ({
     if (Number(depositAmount) > 0) {
       try {
         await handleJoinPool();
+        await handleStartGame();
         setIsModalOpen(false);
       } catch (error) {
         console.error("Error joining pool:", error);
@@ -28,6 +30,8 @@ const JoinPoolModal: React.FC<JoinPoolModalProps> = ({
       toast.error("Please enter a valid deposit amount.");
     }
   };
+
+  
 
   return (
     <div

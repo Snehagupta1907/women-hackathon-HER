@@ -118,7 +118,7 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({
       await tx.wait();
       toast.success("Pool joined successfully", { id });
     } catch (error) {
-      toast.error("Error in joining pool", { id });
+      toast.error("You already Played", { id });
     }
   };
 
@@ -130,7 +130,12 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({
       );
       if (!contractInstance) return;
       const leaderboard = await contractInstance.getLeaderboard(poolId);
-      setLeaderboard(leaderboard);
+      const topPlayers = leaderboard[0].map((user:any, index:any) => ({
+        user,
+        score: +leaderboard[1][index].toString(),
+      }));
+      console.log(topPlayers, "topPlayers");
+      setLeaderboard(topPlayers);
     } catch (error) {
       console.log(error, "Not fetching leaderboard");
     }
@@ -165,6 +170,7 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({
         score: userDetails[1].toNumber(),
         lifes: userDetails[2].toNumber(),
       };
+      
       setUserInfo(userData);
     } catch (error) {
       console.log(error, "Not fetching user details");
@@ -174,6 +180,7 @@ const DataContextProvider: React.FC<DataContextProviderProps> = ({
   useEffect(() => {
     if (!signer) return;
     getPlayerInfo(1);
+    getLeaderboard(1);
   }, [signer]);
 
   return (
