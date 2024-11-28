@@ -31,6 +31,17 @@ You can play the game online at [Snake Game Demo](https://snakes-game-nine.verce
 - Game over screen with the option to restart.
 - Keyboard controls for navigation.
 
+  ## Delegation Through Metamask
+
+Delegation via Metamask is crucial for ensuring a seamless and decentralized experience in the *Snake Game*. As users are actively playing, they cannot update their scores directly. To address this, we employ an automated system, such as a cron job or another automation tool, to handle score updates efficiently. 
+
+Here’s how it works:  
+- Only the *admin* has the authority to update scores on-chain, maintaining the integrity and security of the game.  
+- To achieve full decentralization, we use a *delegation wallet* that updates the scores on behalf of the admin.  
+- Once a user exhausts all their lives in a pool, the delegated wallet automatically updates their final score on-chain.  
+
+This approach ensures a trustless, decentralized, and efficient system for managing scores, allowing players to focus on the game while ensuring fair competition.
+
 ## Getting Started
 
 To run the game locally, follow these steps:
